@@ -1411,7 +1411,7 @@ class FileAttachmentField extends FileField
             throw new Exception("FileAttachmentField::getDefaults() - There is no config json file at $file_path");
         }
 
-        return Convert::json2array(file_get_contents($file_path));
+        return json_decode(file_get_contents($file_path));
     }
 
     /**
